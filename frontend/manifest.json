@@ -1,0 +1,13 @@
+{
+    "manifest_version": 2,
+   
+    "name": "Trustworthy",
+    "version": "0.1.0",
+    "description": "Filtering the propoganda out of your life",
+   
+    "content_scripts": [{
+      "css": ["styles.css"],
+      "js": ["content.js"],
+      "matches": ["<all_urls>"]
+    }]
+  }
