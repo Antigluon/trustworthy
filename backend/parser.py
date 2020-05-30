@@ -11,8 +11,15 @@ class Strip():
         headers = {
         'referer': 'https://outline.com/'
         }
-        response = requests.request("GET", url, headers=headers, data = payload).json()
-        self.resp = response
+        response = requests.request("GET", url, headers=headers, data = payload)
+        if response.status_code == 200:
+            try:
+                self.resp = response.json()
+                self.successful = True
+            except:
+                self.successful = False
+        else:
+            self.successful = False
 
     def raw_text(self):
         """Extracts the raw text from the provided article link and returns it, clean of html tags
@@ -33,7 +40,7 @@ class Strip():
         """Check that this is true before calling any other functions, if it failed to extract text and
         data, this will be false and you can return to the extension that it couldn't find content to 
         fact-check."""
-        return self.resp["success"] and self.resp['data']['html'] is not None and self.resp['data']['language'] == 'en'
+        return self.successful and self.resp["success"] and self.resp['data']['html'] is not None and self.resp['data']['language'] == 'en'
         
     def article_title(self):
         """Returns the extracted article title"""
