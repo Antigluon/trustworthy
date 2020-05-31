@@ -14,6 +14,7 @@ from tensorflow.keras.preprocessing.text import one_hot
 nltk.download('punkt')
 
 model = tf.keras.models.load_model('data/lstm_model.h5')
+model._make_predict_function()
 
 # prediciting if the current article is reliable or not
 def reliable(text):
