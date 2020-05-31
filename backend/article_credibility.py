@@ -1,5 +1,4 @@
 import nltk
-import parser
 nltk.download('punkt')
 
 model = tf.keras.models.load_model('data/lstm_model.h5')
@@ -23,7 +22,3 @@ def reliable(text):
     result_df = pd.concat([pred_df, text_df], axis=1)
     
     return result_df
-    
-article = parser.Strip("https://www.foxnews.com/us/minnesota-national-guard-full-mobilization-george-floyd")
-if article.is_success():
-    reliable(article.raw_text())
