@@ -10,6 +10,7 @@ from keras.layers import Dense
 from keras.layers import Flatten
 from keras.layers import Embedding
 import tensorflow as tf
+from tensorflow.keras.preprocessing.text import one_hot
 nltk.download('punkt')
 
 model = tf.keras.models.load_model('data/lstm_model.h5')
