@@ -28,7 +28,7 @@ def fact_check(text):
   r = requests.get('https://factchecktools.googleapis.com/v1alpha1/claims:search', params=payload)
   fc_raw = r.json()
   if not fc_raw:
-    return json.dumps({})
+    return {}
   fc_data = fc_raw['claims'][0]
   fc_review = fc_data['claimReview'][0]
   fc_source = Strip(fc_review['url'])
