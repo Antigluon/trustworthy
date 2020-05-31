@@ -3,6 +3,9 @@ from flask import Flask, request, redirect, url_for, render_template, jsonify
 import json
 from flask_cors import CORS, cross_origin
 
+import article_credibility
+import parser
+
 app = Flask(__name__)
 cors = CORS(app)
 
@@ -12,8 +15,8 @@ def article_check():
     if request.method == 'POST':
         url = request.form.get('article_url')
         if url is not None:
-            # do ml stuff
-            return "all good"
+            if article.is_success():
+                reliable(article.raw_text())
         else:
             return "didn't get an article url"
     else:
