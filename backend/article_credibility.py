@@ -40,7 +40,14 @@ def reliable(file):
     
     result_df.columns = ["predictions", "Sentence"]
     
-    return result_df.loc[result_df['predictions'] <= 0.7])
+    print(result_df.loc[result_df['predictions'] <= 0.7])
     
-    # return pred_df["predictions"].mean())
+    fakeres_df = result_df.loc[result_df['predictions'] <= 0.7]
+    fake_df = fakeres_df["Sentence"]
+    
+    return fake_df
+    
+    # print(pred_df["predictions"].mean())
+    
+reliable("/kaggle/input/cnn-article/message-2.txt")
     
