@@ -1,0 +1,422 @@
+body {
+    font-family: arial,helvetica;
+    color: #fff;
+}
+
+h1 {
+    font-size: 5em;
+    margin:0;
+}
+
+.intro h1 {
+    font-size: 4em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+a {
+  color: inherit;
+}
+
+#url {
+  padding: 5px;
+  font-size: 2.5em;
+  border-radius: 10px;
+  border: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+#submit {
+  background-color: #003459;
+  color: white;
+  font-size: 2em;
+  border-radius: 10px;
+  border: none;
+  padding: 15px;
+}
+
+.demotitle {
+  margin: auto;
+  width: 100%;
+  max-width: 650px;
+  line-height: 1.2em;
+  position: fixed;
+  background-color: white;
+}
+
+#demo-title {
+  color: black;
+  margin-bottom: 25px;
+}
+
+.title {
+  float: left;
+}
+
+.close {
+  cursor: pointer;
+  float: right;
+}
+
+.section {
+    text-align:center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.section .fp-slides {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.section .fp-controlArrow.fp-next {
+    right: 50px;
+}
+
+.section .fp-controlArrow.fp-prev {
+    left: 50px;
+}
+
+#infoMenu li a {
+    color: #fff;
+}
+
+.demoappscrollable {
+    --base-font-weight: 400;
+    --base-font-size: 22px/1.62;
+    --sys-font-family: "Adobe Garamond Pro", "Georgia", "Times New Roman",Times,serif;
+    --zh-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+    --sub-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Droid Sans", "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+    --base-font-family: var(--sys-font-family), var(--zh-font-family);
+    --code-font-family: Menlo, Monaco, Consolas, "Courier New";
+    --base-color: #444443;
+    --emphasis-color: #222223;
+    --link-color: #0985ce;
+    --link-hover-color: #0985ce;
+    --figure-color: #666665;
+    --blockquote-color: #666664;
+    --code-color: #808080;
+    --pre-code-color: #4c4c4c;
+
+}
+
+#demoapp.demoappscrollable {
+  font: var(--base-font-weight) var(--base-font-size) var(--base-font-family), sans-serif;
+  color: var(--base-color);
+  font-variant-ligatures: common-ligatures;
+  font-variant-numeric: oldstyle-nums;
+  -moz-font-feature-settings: "liga", "clig", "onum";
+  -webkit-font-feature-settings: "liga", "clig", "onum";
+   font-feature-settings: "liga", "clig", "onum";
+}
+
+#demoapp.demoappscrollable h1,
+#demoapp.demoappscrollable h2,
+#demoapp.demoappscrollable h3,
+#demoapp.demoappscrollable h4,
+#demoapp.demoappscrollable h5,
+#demoapp.demoappscrollable h6 {
+  font-family: var(--sub-font-family), sans-serif;
+  color: var(--emphasis-color);
+  -webkit-font-feature-settings: 'kern';
+}
+#demoapp.demoappscrollable h1 {
+  font-size: 1.65em;
+  margin: 0.25em 0;
+  line-height: 1.2em;
+  /* font-family: var(--sub-font-family); */
+  /* font-weight: 700; */
+}
+#demoapp.demoappscrollable > h1 {
+  margin-top: 0;
+  font-size: 1.5em;
+}
+#demoapp.demoappscrollable h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+#demoapp.demoappscrollable h3 {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+#demoapp.demoappscrollable h4,
+#demoapp.demoappscrollable h5,
+#demoapp.demoappscrollable h6 {
+  font-size: 1em;
+  margin: 1.6em 0 1em 0;
+}
+#demoapp.demoappscrollable h6 {
+  font-weight: 500;
+}
+#demoapp.demoappscrollable p {
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 1.24em;
+}
+#demoapp.demoappscrollable a:hover {
+    color: var(--link-color);
+    text-shadow: -1px 0 #f8fcf9, 1px 0 #f8fcf9, 0 -1px #f8fcf9, 0 -2px #f8fcf9, 0 -3px #f8fcf9, 0 -4px #f8fcf9, 0 -5px #f8fcf9, 0 -6px #f8fcf9;
+    background: -webkit-linear-gradient(#0985ce,#0985ce 1px,rgba(255,255,255,.9) 1px,rgba(255,255,255,.9) 2px,transparent 2px);
+    background: linear-gradient(#0985ce,#0985ce 1px,rgba(255,255,255,.9) 1px,rgba(255,255,255,.9) 2px,transparent 2px);
+    background-size: 1px .44em;
+    background-position: -9px 100%;
+    background-repeat: repeat-x;
+    padding: .3em 0 .287em;
+    cursor: pointer;
+    color: #0985ce;
+    text-decoration: none;
+}
+#demoapp.demoappscrollable a, #demoapp.demoappscrollable a em, #demoapp.demoappscrollable a b {
+    color: var(--link-hover-color);
+    text-decoration-color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+#demoapp.demoappscrollable h1 a, #demoapp.demoappscrollable h2 a, #demoapp.demoappscrollable h3 a {
+  text-decoration: none;
+}
+#demoapp.demoappscrollable strong,
+#demoapp.demoappscrollable b {
+  font-weight: 700;
+  color: var(--emphasis-color);
+}
+#demoapp.demoappscrollable em,
+#demoapp.demoappscrollable i {
+  font-style: italic;
+  color: var(--emphasis-color);
+}
+#demoapp.demoappscrollable img {
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+  margin: 0.2em 0;
+}
+#demoapp.demoappscrollable a img {
+  /* Remove border on IE */
+  border: none;
+}
+#demoapp.demoappscrollable figure {
+  position: relative;
+  clear: both;
+  outline: 0;
+  margin: 10px 0 30px;
+  padding: 0;
+  min-height: 100px;
+}
+#demoapp.demoappscrollable figure img {
+  display: block;
+  max-width: 100%;
+  margin: auto auto 4px;
+  box-sizing: border-box;
+}
+#demoapp.demoappscrollable figure figcaption {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height:1.5em;
+  color: var(--figure-color);
+  font-family: var(--sub-font-family);
+}
+
+#demoapp.demoappscrollable figure figcaption .credit {
+ font-size: 80%;
+ color: #a5a7ae;
+}
+
+
+#demoapp.demoappscrollable figure figcaption a {
+  text-decoration: none;
+  color: var(--figure-color);
+}
+#demoapp.demoappscrollable hr {
+  display: block;
+  width: 14%;
+  margin: 40px auto 34px;
+  border: 0 none;
+  border-top: 3px solid #dededc;
+}
+#demoapp.demoappscrollable blockquote {
+  margin: 0 0 1.64em 0;
+  border-left: 3px solid #dadada;
+  padding-left: 12px;
+  color: var(--blockquote-color);
+}
+#demoapp.demoappscrollable blockquote a {
+  color: var(--blockquote-color);
+}
+#demoapp.demoappscrollable ul,
+#demoapp.demoappscrollable ol {
+  margin: 0 0 24px 6px;
+  padding-left: 16px;
+}
+#demoapp.demoappscrollable ul {
+  list-style-type: square;
+}
+#demoapp.demoappscrollable ol {
+  list-style-type: decimal;
+}
+#demoapp.demoappscrollable li {
+  margin-bottom: 0.2em;
+}
+#demoapp.demoappscrollable li ul,
+#demoapp.demoappscrollable li ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 14px;
+}
+#demoapp.demoappscrollable li ul {
+  list-style-type: disc;
+}
+#demoapp.demoappscrollable li ul ul {
+  list-style-type: circle;
+}
+#demoapp.demoappscrollable li p {
+  margin: 0.4em 0 0.6em;
+}
+#demoapp.demoappscrollable .unstyled {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#demoapp.demoappscrollable code,
+#demoapp.demoappscrollable tt {
+  color: var(--code-color);
+  font-size: .75em;
+  background-color: #f9f9f7;
+  padding: 1px 2px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  font-family: var(--code-font-family), monospace;
+  word-wrap: break-word;
+}
+#demoapp.demoappscrollable pre {
+  margin: 1.64em 0;
+  padding: 7px;
+  border: none;
+  border-left: 3px solid #dadada;
+  padding-left: 10px;
+  overflow: auto;
+  line-height: 1.5;
+  font-size: .75em;
+  font-family: var(--code-font-family), monospace;
+  color: var(--pre-code-color);
+  background-color: #f9f9f7;
+}
+#demoapp.demoappscrollable pre code,
+#demoapp.demoappscrollable pre tt {
+  color: var(--pre-code-color);
+  border: none;
+  background: none;
+  padding: 0;
+}
+#demoapp.demoappscrollable table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 1.5em;
+  font-size: 0.96em;
+  box-sizing: border-box;
+}
+#demoapp.demoappscrollable th,
+#demoapp.demoappscrollable td {
+  text-align: left;
+  padding: 4px 8px 4px 10px;
+  border: 1px solid #dadada;
+}
+#demoapp.demoappscrollable td {
+  vertical-align: top;
+}
+#demoapp.demoappscrollable tr:nth-child(even) {
+  background-color: #efefee;
+}
+#demoapp.demoappscrollable iframe {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 30px;
+}
+#demoapp.demoappscrollable figure iframe {
+  margin: auto;
+}
+
+#demoapp.demoappscrollable {
+    color: var(--base-color);
+    height: 95%;
+    max-width: 650px;
+    text-align: left;
+    overflow-y: scroll;
+    margin: 0 auto;
+    -ms-overflow-style: none;
+    padding-right: 15px;
+    padding-left: 15px;
+    font: var(--base-font-weight) var(--base-font-size) var(--base-font-family), sans-serif;
+    font-variant-ligatures: common-ligatures;
+    font-variant-numeric: oldstyle-nums;
+}
+
+.demoappscrollable::-webkit-scrollbar {
+    display: none;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+#menu li {
+	display:inline-block;
+	margin: 10px;
+	color: #00171F;
+	background:#fff;
+	background: rgba(255,255,255, 0.5);
+	-webkit-border-radius: 10px;
+            border-radius: 10px;
+}
+#menu li.active{
+	background:#003459;
+	background: rgba(0,0,0, 0.5);
+	color: #fff;
+}
+#menu li a{
+	text-decoration:none;
+	color: #00171F;
+}
+#menu li.active a:hover{
+	color: #00171F;
+}
+#menu li:hover{
+	background: rgba(255,255,255, 0.8);
+}
+#menu li a,
+#menu li.active a{
+	padding: 9px 18px;
+	display:block;
+}
+#menu li.active a{
+	color: #fff;
+}
+#menu{
+	position:fixed;
+	top:0;
+	right:0;
+	height: 40px;
+	z-index: 70;
+	padding: 0;
+	margin:0;
+}
