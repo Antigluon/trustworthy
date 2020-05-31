@@ -1,5 +1,6 @@
 import requests
 import json
+import string
 from pysummarization.nlpbase.auto_abstractor import AutoAbstractor
 from pysummarization.tokenizabledoc.simple_tokenizer import SimpleTokenizer
 from pysummarization.abstractabledoc.top_n_rank_abstractor import TopNRankAbstractor
@@ -21,14 +22,32 @@ class Summarizer:
 
 summarizer = Summarizer()
 
-def fact_check(text):
+def fact_check(text, title=None, extensive=False):
   """search for stuff and fact check it"""
   summary_list = summarizer.summarize(text)
-  payload = {'key': API_KEY, 'page_size': '1', 'query': summary_list[0]}
+  summary_claim = summary_list[0].translate(str.maketrans('', '', string.punctuation))
+  payload = {'key': API_KEY, 'page_size': '1', 'query': summary_claim}
   r = requests.get('https://factchecktools.googleapis.com/v1alpha1/claims:search', params=payload)
   fc_raw = r.json()
   if not fc_raw:
-    return {}
+    if title is not None:
+      payload = {'key': API_KEY, 'page_size': '1', 'query': title}
+      r = requests.get('https://factchecktools.googleapis.com/v1alpha1/claims:search', params=payload)
+      fc_raw = r.json()
+      if not fc_raw:
+        if not extensive:
+          return {}
+        else:
+          for sentence in summary_list:
+            payload = {'key': API_KEY, 'page_size': '1', 'query': sentence.translate(str.maketrans('', '', string.punctuation))}
+            r = requests.get('https://factchecktools.googleapis.com/v1alpha1/claims:search', params=payload)
+            fc_raw = r.json()
+            if fc_raw:
+              break
+          if not fc_raw:
+            return {}
+    else:
+      return {}
   fc_data = fc_raw['claims'][0]
   fc_review = fc_data['claimReview'][0]
   fc_source = Strip(fc_review['url'])
@@ -43,4 +62,7 @@ def fact_check(text):
   }
 
   return response
-  #return {"claim":"Typewriter", "rating":"Hamlet", "publisher":"Monkeys", "url":"https://factorfiction.online"}
+
+def check(url, extensive=False):
+  doc = Strip(url)
+  return fact_check(doc.raw_text(), doc.article_title(), extensive=extensive)
