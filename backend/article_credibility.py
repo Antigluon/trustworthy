@@ -34,7 +34,7 @@ def reliable(text):
     result_df = pd.concat([pred_df, text_df], axis=1)
     result_df.columns = ["predictions", "sentence"]
 
-    fake = result_df["predictions"] == 0
+    fake = result_df.loc[result_df["predictions"] == 0]
     
     return fake
     
