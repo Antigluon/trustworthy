@@ -1,5 +1,14 @@
 import nltk
 import parser
+import keras
+import numpy as np
+import pandas as pd
+from keras.preprocessing.text import Tokenizer
+from keras.preprocessing.sequence import pad_sequences
+from keras.models import Sequential
+from keras.layers import Dense
+from keras.layers import Flatten
+from keras.layers import Embedding
 nltk.download('punkt')
 
 model = tf.keras.models.load_model('data/lstm_model.h5')
