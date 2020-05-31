@@ -34,7 +34,7 @@ def reliable(file):
     
     pred_df = pd.DataFrame(pred)
     text_df = pd.DataFrame(text)
-    result_df = pd.concat([pred_df, text_df])
+    result_df = pd.concat([pred_df, text_df], axis=1)
     
     return result_df
     
