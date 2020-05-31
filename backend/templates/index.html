@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FictionFilter</title>
+        <link rel="stylesheet" type="text/css" href="/static/fullpage.css">
+        <link rel="stylesheet" type="text/css" href="/static/styles.css">
+        <link rel="stylesheet" type="text/css" href="/static/defaults.css">
+    </head>
+    <body>
+        <div id="fullpage">
+            <div class="section">
+                <h1>FictionFilter</h1>
+                <p>MasseyHacks VI Project by Eric Andrechek, Jainil Shah, and Rabab Azeem</p>
+                <form id="demoform" action="/api" method="post">
+                    <input type="text" id="url" name="article_url" placeholder="Input article URL here"><br><br>
+                    <input type="submit" id="submit" value="Try it out!">
+                </form>
+            </div>
+
+            <div class="section">
+
+                <div class="slide">
+                    <div class="intro">
+                        <h1>Why a fact checker?</h1>
+                        <p>Manually fact-checking articles and posts takes time and man-power. With more and 
+                            more content created online every day, the potential dangers we face with the spread 
+                            of misinformation is every-growing. That is why we created FictionFilter, an 
+                            ML-based service to find misinformation and false claims in articles fully-autonomously.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="slide" data-anchor="how-it-works">
+                    <div class="intro">
+                        <h1>How does this all work?</h1>
+                        <p>The article credibility checker uses Keras and previously labeled articles to train 
+                            a LSTM (long short term memory) model which is a type of a RNN (recurrent neural 
+                            network). LSTM models are very useful for classifying articles since they are 
+                            4-layered neural networks with loops in them and thus, allow information to persist, 
+                            unlike normal neural networks. The raw text is encoded using one-hot encoding which 
+                            is then applied to the LSTM model that classifies it as credible or fake.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="slide" data-anchor="code">
+                    <div class="intro">
+                        <h1>See all our code <a href="https://github.com/Antigluon/trustworthy">on GitHub</a></h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.8/fullpage.extensions.min.js"></script>
+        <script type="text/javascript" src="/static/fullpage.js"></script>
+        <script type="text/javascript" src="/static/scripts.js"></script>
+    </body>
+</html>

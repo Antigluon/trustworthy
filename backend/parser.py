@@ -27,6 +27,10 @@ class Strip():
         soup = BeautifulSoup(self.resp['data']['html'], 'lxml')
         return soup.get_text()
     
+    def html_text(self):
+        """Extracts the text in an html format in order to display in a pretty format"""
+        return self.resp['data']['html']
+    
     def pretty_json(self):
         """Returns the extracted data from the article as a pretty json element easy to read"""
         return json.dumps(self.resp, indent=2, sort_keys=True)

@@ -1,0 +1,79 @@
+.demoappscrollable html, .demoappscrollable address,
+.demoappscrollable blockquote,
+.demoappscrollable body, .demoappscrollable dd, .demoappscrollable div,
+.demoappscrollable dl, .demoappscrollable dt, .demoappscrollable fieldset, .demoappscrollable form,
+.demoappscrollable frame, .demoappscrollable frameset,
+.demoappscrollable h1, .demoappscrollable h2, .demoappscrollable h3, .demoappscrollable h4,
+.demoappscrollable h5, .demoappscrollable h6, .demoappscrollable noframes,
+.demoappscrollable ol, .demoappscrollable p, .demoappscrollable ul, .demoappscrollable center,
+.demoappscrollable dir, .demoappscrollable hr, .demoappscrollable menu, .demoappscrollable pre 
+{ display: block; unicode-bidi: embed }
+.demoappscrollable li              { display: list-item }
+.demoappscrollable head            { display: none }
+.demoappscrollable table           { display: table }
+.demoappscrollable tr              { display: table-row }
+.demoappscrollable thead           { display: table-header-group }
+.demoappscrollable tbody           { display: table-row-group }
+.demoappscrollable tfoot           { display: table-footer-group }
+.demoappscrollable col             { display: table-column }
+.demoappscrollable colgroup        { display: table-column-group }
+.demoappscrollable td, .demoappscrollable th          { display: table-cell }
+.demoappscrollable caption         { display: table-caption }
+.demoappscrollable th              { font-weight: bolder; text-align: center }
+.demoappscrollable caption         { text-align: center }
+.demoappscrollable body            { margin: 8px }
+.demoappscrollable h1              { font-size: 2em; margin: .67em 0 }
+.demoappscrollable h2              { font-size: 1.5em; margin: .75em 0 }
+.demoappscrollable h3              { font-size: 1.17em; margin: .83em 0 }
+.demoappscrollable h4, .demoappscrollable p,
+.demoappscrollable blockquote, .demoappscrollable ul,
+.demoappscrollable fieldset, .demoappscrollable form,
+.demoappscrollable ol, .demoappscrollable dl, .demoappscrollable dir,
+.demoappscrollable menu            { margin: 1.12em 0 }
+.demoappscrollable h5              { font-size: .83em; margin: 1.5em 0 }
+.demoappscrollable h6              { font-size: .75em; margin: 1.67em 0 }
+.demoappscrollable h1, .demoappscrollable h2, .demoappscrollable h3, .demoappscrollable h4,
+.demoappscrollable h5, .demoappscrollable h6, .demoappscrollable b,
+.demoappscrollable strong          { font-weight: bolder }
+.demoappscrollable blockquote      { margin-left: 40px; margin-right: 40px }
+.demoappscrollable i, .demoappscrollable cite, .demoappscrollable em,
+.demoappscrollable var, .demoappscrollable address    { font-style: italic }
+.demoappscrollable pre, .demoappscrollable tt, .demoappscrollable code,
+.demoappscrollable kbd, .demoappscrollable samp       { font-family: monospace }
+.demoappscrollable pre             { white-space: pre }
+.demoappscrollable button, .demoappscrollable textarea,
+.demoappscrollable input, .demoappscrollable select   { display: inline-block }
+.demoappscrollable big             { font-size: 1.17em }
+.demoappscrollable small, .demoappscrollable sub, .demoappscrollable sup { font-size: .83em }
+.demoappscrollable sub             { vertical-align: sub }
+.demoappscrollable sup             { vertical-align: super }
+.demoappscrollable table           { border-spacing: 2px; }
+.demoappscrollable thead, .demoappscrollable tbody,
+.demoappscrollable tfoot           { vertical-align: middle }
+.demoappscrollable td, .demoappscrollable th, .demoappscrollable tr      { vertical-align: inherit }
+.demoappscrollable s, .demoappscrollable strike, .demoappscrollable del  { text-decoration: line-through }
+.demoappscrollable hr              { border: 1px inset }
+.demoappscrollable ol, .demoappscrollable ul, .demoappscrollable dir,
+.demoappscrollable menu, .demoappscrollable dd        { margin-left: 40px }
+.demoappscrollable ol              { list-style-type: decimal }
+.demoappscrollable ol ul, .demoappscrollable ul ol,
+.demoappscrollable ul ul, .demoappscrollable ol ol    { margin-top: 0; margin-bottom: 0 }
+.demoappscrollable u, .demoappscrollable ins          { text-decoration: underline }
+.demoappscrollable br:before       { content: "\A"; white-space: pre-line }
+.demoappscrollable center          { text-align: center }
+.demoappscrollable :link, .demoappscrollable :visited { text-decoration: underline }
+.demoappscrollable :focus          { outline: thin dotted invert }
+
+/* Begin bidirectionality settings (do not change) */
+BDO[DIR="ltr"]  { direction: ltr; unicode-bidi: bidi-override }
+BDO[DIR="rtl"]  { direction: rtl; unicode-bidi: bidi-override }
+
+*[DIR="ltr"]    { direction: ltr; unicode-bidi: embed }
+*[DIR="rtl"]    { direction: rtl; unicode-bidi: embed }
+
+@media print {
+    .demoappscrollable h1            { page-break-before: always }
+    .demoappscrollable h1, .demoappscrollable h2, .demoappscrollable h3,
+    .demoappscrollable h4, .demoappscrollable h5, .demoappscrollable h6    { page-break-after: avoid }
+    .demoappscrollable ul, .demoappscrollable ol, .demoappscrollable dl    { page-break-before: avoid }
+}
