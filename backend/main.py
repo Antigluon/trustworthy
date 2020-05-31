@@ -3,6 +3,7 @@ from flask import Flask, request, redirect, url_for, render_template, jsonify
 import json
 from flask_cors import CORS, cross_origin
 import parser
+import article_credibility
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -18,7 +19,7 @@ def article_check():
                 data = {}
                 data['text'] = article.html_text()
                 data['title'] = article.article_title()
-                # get the list of potentially innacurate statements here
+                reliable(article.raw_text())
                 return jsonify(data)
             else:
                 return "ERROR"
