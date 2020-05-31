@@ -30,11 +30,17 @@ def reliable(file):
     embedded_doc=pad_sequences(onehot_enc, padding='pre', maxlen=sen_len)
     text_final=np.array(embedded_doc)
     
-    pred = model.predict_classes(text_final)
+    pred = model.predict(text_final)
     
     pred_df = pd.DataFrame(pred)
     text_df = pd.DataFrame(text)
     result_df = pd.concat([pred_df, text_df], axis=1)
     
-    return result_df
+    pred_df.columns = ["predictions"]
+    
+    result_df.columns = ["predictions", "Sentence"]
+    
+    return result_df.loc[result_df['predictions'] <= 0.7])
+    
+    # return pred_df["predictions"].mean())
     
