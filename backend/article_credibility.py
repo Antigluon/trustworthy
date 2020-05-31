@@ -17,13 +17,15 @@ model = tf.keras.models.load_model('data/lstm_model.h5')
 model._make_predict_function()
 
 # prediciting if the current article is reliable or not
-def reliable(text):
+def reliable(file):
+    with open(file, 'r') as file:
+        text = file.read().replace('\n', ' ')
     
     text = nltk.tokenize.sent_tokenize(text)
     
     text=[token.lower() for token in text]
     
-    onehot_enc=[one_hot(words,100000) for words in text]
+    onehot_enc=[one_hot(words,10000) for words in text]
     sen_len=300
     embedded_doc=pad_sequences(onehot_enc, padding='pre', maxlen=sen_len)
     text_final=np.array(embedded_doc)
@@ -32,10 +34,7 @@ def reliable(text):
     
     pred_df = pd.DataFrame(pred)
     text_df = pd.DataFrame(text)
-    result_df = pd.concat([pred_df, text_df], axis=1)
-    result_df.columns = ["predictions", "sentence"]
-
-    fake = result_df.loc[result_df["predictions"] == 0]
+    result_df = pd.concat([pred_df, text_df])
     
-    return fake
+    return result_df
     
