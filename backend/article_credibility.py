@@ -22,7 +22,7 @@ def reliable(text):
     text_df = pd.DataFrame(text)
     result_df = pd.concat([pred_df, text_df], axis=1)
     
-    print(result_df)
+    return result_df
     
 article = parser.Strip("https://www.foxnews.com/us/minnesota-national-guard-full-mobilization-george-floyd")
 if article.is_success():
